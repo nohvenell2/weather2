@@ -25,6 +25,9 @@ jobs:
         run: npm run build
         env:
           WEATHERAPI_URL: ${{ secrets.WEATHERAPI_URL }}
+        
+      - name: List output directory
+        run: ls -la ./out
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
