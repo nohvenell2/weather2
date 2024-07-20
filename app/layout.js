@@ -4,7 +4,7 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Weather",
+  title: "Weather2",
   description: "Weather App with git",
 };
 
