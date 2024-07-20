@@ -1,6 +1,6 @@
 import { getWData } from "@/lib/apijson";
 
-export default async function CurrentWeather({data}) {
+export default async function CurrentWeather() {
   const {info_current} = await getWData();
     return (
       <div className="bg-white shadow-md rounded-lg p-6">

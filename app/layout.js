@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <main className="py-8">
         <h1 className="text-3xl font-bold mb-6">날씨 정보</h1>
         <div className="mb-6">
-          <Link href="/current" className={`mr-4`}>
+          <Link href="/" className={`mr-4`}>
             현재 날씨
           </Link>
           <Link href="/hourly" className={`mr-4`}>
