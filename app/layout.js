@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             현재 날씨
           </Link>
           <Link href="/hourly" className={`mr-4`}>
-            시간별 예보
+            시간 별 예보
           </Link>
           <Link href="/daily" className={`mr-4`}>
             일간 예보
