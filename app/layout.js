@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="container mx-auto px-4">
         <main className="py-8">
         <h1 className="text-3xl font-bold mb-6">날씨 정보</h1>
         <div className="mb-6">
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         </div>
         {children}
         </main>
+        </div>
       </body>
     </html>
   );
