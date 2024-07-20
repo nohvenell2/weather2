@@ -17,7 +17,7 @@ export default async function Home(){
         </div>
       </div>
     )
-  }catch{
+  }catch(error){
     console.error("Failed to fetch weather data:", error);
     return (
       <div className="bg-white shadow-md rounded-lg p-6">
