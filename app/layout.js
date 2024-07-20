@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className="container mx-auto px-4">
         <main className="py-8">
-        <h1 className="text-3xl font-bold mb-6">날씨</h1>
+        <h1 className="text-3xl font-bold mb-6">날씨ㅜ</h1>
         <div className="mb-6">
           <Link href="/" className={`mr-4`}>
             현재 날씨
