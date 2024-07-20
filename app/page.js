@@ -1,6 +1,5 @@
 import { getWData } from "@/lib/apijson";
 export default async function Home(){
-  console.log('loading home')
   try{
   const {info_current} = await getWData();
     return (
