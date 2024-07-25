@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 export default async function HourlyForecast() {
-    const info_forecast_nexthour12 = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-hour`,{cache:'no-store'})).json();
+    const info_forecast_nexthour12 = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-hour`,{next:{revalidate:10}})).json();
     return (
       <div className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">시간별 예보 (12시간)</h2>
