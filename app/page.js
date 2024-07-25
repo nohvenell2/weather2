@@ -2,11 +2,11 @@ export const dynamic = 'force-dynamic'
 export default async function Home(){
   try{
   const info_current = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-current`,{cache:'no-store'})).json();
-  //const now = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-now`,{cache:'no-store'})).json();
+  const now =info_current.now;
     return (
       <div className="bg-white shadow-md rounded-lg p-6">
         <div className="flex flex-row items-baseline"><h2 className="text-2xl font-bold mb-4">현재 날씨</h2>
-        {/*<h4>랜더링 시간 : {now}</h4>*/}
+        <h4>/ fetched at : {now}</h4>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>측정 시간: {info_current.last_updated}</div>
