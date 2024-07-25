@@ -1,7 +1,5 @@
-import { getWData } from "@/lib/apijson";
-
 export default async function DailyForecast() {
-    const {info_forecast_day7} = await getWData();
+    const info_forecast_day7 = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-day`)).json();
     return (
       <div className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">일간 예보 (7일)</h2>

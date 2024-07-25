@@ -1,7 +1,6 @@
-import { getWData } from "@/lib/apijson";
 export default async function Home(){
   try{
-  const {info_current} = await getWData();
+  const info_current = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-current`)).json();
     return (
       <div className="bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">현재 날씨</h2>
