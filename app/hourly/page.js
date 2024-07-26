@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic'
-export default async function HourlyForecast() {
+export default async function HourlyForecast(){
     const info_forecast_nexthour12 = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-hour`,{next:{revalidate:10}})).json();
     return (
       <div className="bg-white shadow-md rounded-lg p-6">
