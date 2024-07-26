@@ -4,7 +4,7 @@ export default async function handler(req,res){
         try{
             const data = await get_rawdata();
             const current_data = data.current;
-            return res.status(200).json({...current_data,now:(new Date()).toLocaleTimeString()});
+            return res.status(200).json({...current_data,now:(new Date()).toLocaleTimeString('ko-KR')});
         }catch(err){
             console.log(`Weather API ERR. ${err}`)
         }
