@@ -1,3 +1,3 @@
 export default function handler(req,res){
-    res.status(200).json((new Date).toTimeString());
+    res.status(200).json((new Date).toLocaleTimeString('ko-KR'));
 }

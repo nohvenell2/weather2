@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic'
 export default async function Current(){
     try{
-    const info_current = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-current`,{cache:'no-store'})).json();
+    const info_current = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-current`,{revalidate:10})).json();
     const now =info_current.now;
     return (
         <div className="bg-white shadow-md rounded-lg p-6">
