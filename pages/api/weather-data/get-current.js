@@ -3,9 +3,11 @@ import connectDB from "@/util/connectDB-mysql";
 //todo 구, 동 별로 다른 db 를 전달해주는 로직 추가. 우선 도봉구, 방학3동 사용
 connectDB
 const lo_goo = '도봉구'
-const lo_dong = '방학3동'
+const dongs = ['방학3동','상봉1동']
 export default async function handler(req,res){
-      if (req.method=='GET'){
+    if (req.method=='GET'){
+        //db 에 없는 동 입력시 실패 응답
+        if (!(req.query.dong in dongs)){return res.status(400).json(`${req.query.dong} 날씨 정보는 운영중이지 않습니다`)}
         let connection;
         try{
             connection = await connectDB();
