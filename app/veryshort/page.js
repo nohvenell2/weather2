@@ -1,4 +1,4 @@
-import { rainCode,skyCode } from "@/util/weatherCode";
+import { rainCode,skyCode } from "@/constants/weatherCode";
 //forecastTime sky tempc rainmm humidity raintype
 export const dynamic = 'force-dynamic'
 export default async function HourlyForecast(){

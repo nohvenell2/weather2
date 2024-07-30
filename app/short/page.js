@@ -1,5 +1,5 @@
 //forecastTime sky tempc rainmm snowmm rainper humidity raintype
-import { rainCode,skyCode } from "@/util/weatherCode";
+import { rainCode,skyCode } from "@/constants/weatherCode";
 export const dynamic = 'force-dynamic'
 export default async function HourlyForecast(){
     const dataShort = await (await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/weather-data/get-short`,{next:{revalidate:10}})).json();

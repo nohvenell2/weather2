@@ -1,5 +1,5 @@
 'use client'
-import { rainCode } from "@/util/weatherCode";
+import { rainCode } from "@/constants/weatherCode";
 import { useEffect, useState } from "react";
 //Api data : tempc rainmm humidity raintype pm10Value pm25Value
 export default function Current({params}){

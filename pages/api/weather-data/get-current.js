@@ -1,20 +1,19 @@
 //tempc rainmm humidity raintype pm10Value pm25Value
 import connectDB from "@/util/connectDB-mysql";
+import {dongs,dong_goo} from "@/constants/locationInfo.js"
 //todo 구, 동 별로 다른 db 를 전달해주는 로직 추가. 우선 도봉구, 방학3동 사용
-connectDB
-const lo_goo = '도봉구'
-const dongs = ['방학3동','상봉1동']
 export default async function handler(req,res){
     if (req.method=='GET'){
-        //db 에 없는 동 입력시 실패 응답
-        if (!(req.query.dong in dongs)){return res.status(400).json(`${req.query.dong} 날씨 정보는 운영중이지 않습니다`)}
+        const dong = req.query.dong
+        const goo = dong_goo[dong]
+        if (!dongs.includes(dong)){return res.status(400).json(`${dong} 날씨 정보는 운영중이지 않습니다`)}
         let connection;
         try{
             connection = await connectDB();
             const airQualityQuery = `SELECT pm10Value, pm25Value FROM air_quality_data WHERE cityName = ?`
             const currentQuery=`SELECT * FROM ??`
-            const weatherTabeName = `${lo_dong}_current`
-            const [airQualityResult] = await connection.query(airQualityQuery,[lo_goo])
+            const weatherTabeName = `${dong}_current`
+            const [airQualityResult] = await connection.query(airQualityQuery,[goo])
             const [currentResult] = await connection.query(currentQuery,[weatherTabeName])
             const airQualityData = airQualityResult[0]
             const currentData = currentResult[0]
