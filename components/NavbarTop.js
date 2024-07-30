@@ -1,5 +1,4 @@
 'use client'
-import { Island_Moments } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react"
 export default function NavbarTop(props){
@@ -19,18 +18,16 @@ export default function NavbarTop(props){
     const handleClick = ({target})=>{ setActive(target.id); }
 
     useEffect(()=>{
-        console.log('useEffect loop checker')
-        if (active !== null){router.push(`/${routeid[active]}`)}
+        if (active !== null){ router.push(`/${routeid[active]}`)}
         localStorage.setItem('selectedDong', dong)
+        localStorage.setItem('selectedActive', active)
     },[active,dong])
 
     useEffect(()=>{
         const savedDong = localStorage.getItem('selectedDong');
-        if (savedDong){
-            setDong(savedDong)
-        } else {
-            setDong('방학3동')
-        }
+        const saveActive = localStorage.getItem('selectedActive');
+        savedDong? setDong(savedDong):setDong('방학3동')
+        saveActive? setActive(saveActive):setActive(null)
         setLoading(false)
     },[])
 

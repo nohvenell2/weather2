@@ -6,6 +6,7 @@ export default function Current({params}){
     const [dataCurrent, setData] = useState(null);
     const [error, setError] = useState(null);
     const dong = decodeURIComponent(params.dong)
+    const title = `현재 날씨 - ${dong}`
     useEffect(()=>{
         const fetchData = async () =>{
             try{
@@ -26,23 +27,27 @@ export default function Current({params}){
     if (error){
         return (
             <div className="bg-white shadow-md rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-4">현재 날씨</h2>
+                <h2 className="text-2xl font-bold mb-4">{title}</h2>
                 <div className="text-red-500">날씨 데이터를 가져오는데 실패했습니다: {error}</div>
             </div>
         )
     }
     if (!dataCurrent){
         return (
+            <div>
+            {/*
             <div className="bg-white shadow-md rounded-lg p-6">
-                <h2 className="text-2xl font-bold mb-4">현재 날씨</h2>
+                <h2 className="text-2xl font-bold mb-4">{title}</h2>
                 <div className="text-red-500">날씨 데이터를 가져오는 중입니다.</div>
+            </div>
+            */}
             </div>
         )
     }
     return (
         <div className="bg-white shadow-md rounded-lg p-6">
         <div className="flex flex-row items-baseline">
-            <h2 className="text-2xl font-bold mb-4">현재 날씨</h2>
+            <h2 className="text-2xl font-bold mb-4">{title}</h2>
         </div>
         <div className="grid grid-cols-2 gap-4">
             <div>기온: {dataCurrent.tempc}°C</div>
