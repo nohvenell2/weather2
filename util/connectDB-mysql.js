@@ -1,9 +1,8 @@
-import { createConnection } from "mysql2/promise";
+import {createConnection} from 'mysql2/promise'
 import dotenv from "dotenv";
 dotenv.config({path : '.env.local'});
-//console.log(process.env.MYSQL_ID,process.env.MYSQL_PW)
 const connectionInfo = {
-    host: 'localhost',
+    host: '43.202.38.30',
     user: process.env.MYSQL_ID,
     password: process.env.MYSQL_PW,
     database: 'weather',
@@ -16,10 +15,3 @@ export default async function connectDB(info=connectionInfo){
         console.log(`Mysql Connection Error : ${err}`)
     }
 }
-async function a(){
-    const connection = await connectDB();
-    const result = await connection.query('SELECT * FROM weather.air_quality_data WHERE cityName = ?',['도봉구']);
-    console.log(result)
-    connection.end()
-}
-a()
