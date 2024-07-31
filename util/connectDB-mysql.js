@@ -2,7 +2,7 @@ import {createConnection} from 'mysql2/promise'
 import dotenv from "dotenv";
 dotenv.config({path : '.env.local'});
 const connectionInfo = {
-    host: '43.202.38.30',
+    host: 'localhost',
     user: process.env.MYSQL_ID,
     password: process.env.MYSQL_PW,
     database: 'weather',
