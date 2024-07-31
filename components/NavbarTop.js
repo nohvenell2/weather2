@@ -23,7 +23,7 @@ export default function NavbarTop(props){
         setDong(target.name);
     }
     const handleClick = ({target})=>{
-        Cookies.set('selectedActive',target.name,{path:'/'})
+        Cookies.set('selectedActive',target.id,{path:'/'})
         setActive(target.id);
     }
 
