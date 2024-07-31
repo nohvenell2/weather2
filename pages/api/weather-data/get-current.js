@@ -21,7 +21,7 @@ export default async function handler(req,res){
             const data = {...airQualityData, ...currentData}
             res.status(200).json(data)
         }catch(err){
-            console.log(`[${new Date()}] DB Error : ${err}`)
+            console.log(`[${new Date()}] Current DB Error : ${err}`)
             res.status(500).json('Server Error')
         }finally{
             connection && connection.end()

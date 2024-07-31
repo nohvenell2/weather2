@@ -55,10 +55,8 @@ export default function VeryShort({params}){
                 <th className="px-4 py-2">기상</th>
                 <th className="px-4 py-2">기온</th>
                 <th className="px-4 py-2">습도</th>
-                <th className="px-4 py-2">강수확률</th>
                 <th className="px-4 py-2">강수형태</th>
                 <th className="px-4 py-2">강수량</th>
-                <th className="px-4 py-2">적설량</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,10 +66,8 @@ export default function VeryShort({params}){
                     <td className="px-4 py-2 text-center">{skyCode[data.sky]}</td>
                     <td className="px-4 py-2 text-center">{data.tempc}°C</td>
                     <td className="px-4 py-2 text-center">{data.humidity}%</td>
-                    <td className="px-4 py-2 text-center">{data.rainper}%</td>
                     <td className="px-4 py-2 text-center">{rainCode[data.raintype]}</td>
                     <td className="px-4 py-2 text-center">{data.rainmm}</td>
-                    <td className="px-4 py-2 text-center">{data.snowmm}</td>
                 </tr>
             ))}
             </tbody>
