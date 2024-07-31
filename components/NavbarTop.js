@@ -29,7 +29,7 @@ export default function NavbarTop(props){
 
 
     useEffect(()=>{
-        console.log(active,dong)
+        //console.log(active,dong)
         if (active !== null && dong !== null){
             if (active == 'hourly' || active == 'daily'){
                 router.push(`/${active}`)
