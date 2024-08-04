@@ -5,4 +5,5 @@ export default async function Home() {
   const cookieDong = cookieStore.get('selectedDong')?.value || '방학3동';
   const encodeDong = encodeURIComponent(cookieDong);
   redirect(`/current/${encodeDong}`);
+  return <h1>main</h1>
 }
